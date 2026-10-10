@@ -1,0 +1,543 @@
+
+/* ==========================================
+   🖤 KUROMI STYLE — AUTOESTIMA
+   Negro • Morado • Rosa • Lila
+   ========================================== */
+
+:root {
+    --fondo: #100b18;
+    --fondo-tarjeta: #1d1429;
+    --morado: #8d5bce;
+    --morado-claro: #c9a3ff;
+    --rosa: #ff4fa3;
+    --rosa-claro: #ffb3d9;
+    --blanco: #fff2fb;
+    --borde: #70439c;
+}
+
+/* FONDO GENERAL */
+html {
+    scroll-behavior: smooth;
+    background: var(--fondo);
+}
+
+body {
+    margin: 0;
+    padding: 30px 18px;
+    color: var(--blanco);
+    background:
+        radial-gradient(ellipse at top left, #48205e 0%, transparent 35%),
+        radial-gradient(ellipse at bottom right, #54153f 0%, transparent 30%),
+        linear-gradient(145deg, #100b18, #191024 55%, #0c0912);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* DETALLES DECORATIVOS DEL FONDO */
+body::before {
+    content: "✦  ♡  ✧  ☾  ✧  ♡  ✦";
+    display: block;
+    margin: 0 auto 15px;
+    color: var(--rosa);
+    font-size: 23px;
+    letter-spacing: 12px;
+    text-shadow: 0 0 15px #ff4fa3;
+}
+
+/* ENCABEZADO */
+header {
+    max-width: 1050px;
+    margin: 0 auto 35px;
+    padding: 45px 25px;
+    border: 2px solid var(--morado);
+    border-radius: 30px;
+    background:
+        linear-gradient(135deg, #2c1740ee, #170f25f5);
+    box-shadow:
+        0 0 15px #8d5bce55,
+        0 0 35px #ff4fa322,
+        inset 0 0 25px #8d5bce15;
+}
+
+/* TÍTULO PRINCIPAL */
+h1 {
+    color: var(--rosa-claro);
+    font-size: clamp(2.3rem, 6vw, 4.3rem);
+    line-height: 1.2;
+    text-align: center;
+    text-shadow:
+        0 0 8px #ff4fa3,
+        0 0 22px #ff4fa366,
+        3px 3px 0 #5a267e;
+    animation: kuromiTitulo 3s ease-in-out infinite alternate;
+}
+
+/* SUBTÍTULOS */
+h2 {
+    display: table;
+    max-width: 95%;
+    margin: 35px auto 22px;
+    padding: 12px 24px;
+    color: var(--rosa-claro);
+    background: linear-gradient(110deg, #43204f, #24162f);
+    border: 2px solid var(--rosa);
+    border-radius: 18px 18px 18px 5px;
+    box-shadow:
+        0 0 12px #ff4fa344,
+        inset 0 0 12px #8d5bce22;
+    text-shadow: 0 0 10px #ff4fa355;
+}
+
+/* SUBTÍTULOS PEQUEÑOS */
+h3 {
+    display: inline-block;
+    max-width: 95%;
+    padding: 8px 17px;
+    color: var(--morado-claro);
+    background: #8d5bce19;
+    border-left: 4px solid var(--rosa);
+    border-radius: 4px 14px 14px 4px;
+    text-shadow: 0 0 8px #c9a3ff55;
+}
+
+/* TARJETAS Y SECCIONES */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    color: var(--blanco);
+    background: linear-gradient(145deg, #241831, #171020);
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    text-align: center;
+    box-shadow:
+        0 10px 30px #00000044,
+        0 0 12px #8d5bce22;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+section:hover {
+    transform: translateY(-4px);
+    border-color: var(--rosa);
+    box-shadow:
+        0 12px 30px #00000055,
+        0 0 20px #ff4fa344;
+}
+
+/* TEXTOS */
+p {
+    max-width: 850px;
+    margin: 18px auto;
+    color: #f5eafa;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+strong {
+    color: var(--rosa-claro);
+    text-shadow: 0 0 8px #ff4fa333;
+}
+
+/* LISTAS */
+ul,
+ol {
+    display: table;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-left: 28px;
+    text-align: left;
+    color: #f5eafa;
+}
+
+li {
+    padding: 5px 0;
+}
+
+li::marker {
+    color: var(--rosa);
+}
+
+/* IMÁGENES */
+img {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    margin: 28px auto;
+    padding: 6px;
+    background: linear-gradient(
+        135deg,
+        var(--rosa),
+        var(--morado),
+        #342047
+    );
+    border: 2px solid var(--rosa);
+    border-radius: 22px;
+    box-shadow:
+        0 0 12px #ff4fa366,
+        0 0 28px #8d5bce33;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+img:hover {
+    transform: scale(1.025);
+    box-shadow:
+        0 0 18px #ff4fa399,
+        0 0 35px #8d5bce66;
+}
+
+/* REPRODUCTORES DE AUDIO */
+audio {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 650px;
+    margin: 28px auto;
+    padding: 8px;
+    color-scheme: dark;
+    background: linear-gradient(120deg, #352043, #1b1228);
+    border: 2px solid var(--rosa);
+    border-radius: 40px;
+    box-shadow:
+        0 0 12px #ff4fa355,
+        0 0 25px #8d5bce22;
+}
+
+/* VIDEOS */
+video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    margin: 30px auto;
+    padding: 6px;
+    background: linear-gradient(
+        135deg,
+        var(--rosa),
+        var(--morado),
+        #24132e
+    );
+    border: 2px solid var(--morado-claro);
+    border-radius: 25px;
+    box-shadow:
+        0 0 15px #8d5bce66,
+        0 0 30px #ff4fa333;
+    transition: box-shadow .3s ease;
+}
+
+video:hover {
+    box-shadow:
+        0 0 20px #c9a3ff99,
+        0 0 35px #ff4fa355;
+}
+
+/* CONCLUSIÓN */
+footer {
+    max-width: 1000px;
+    margin: 35px auto 10px;
+    padding: 30px;
+    color: var(--blanco);
+    background: linear-gradient(135deg, #351c47, #1b1027);
+    border: 2px solid var(--rosa);
+    border-radius: 25px;
+    box-shadow: 0 0 20px #ff4fa333;
+}
+
+/* ENLACES, SI LOS HAY */
+a {
+    color: var(--rosa-claro);
+    text-decoration-color: var(--morado);
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--rosa);
+}
+
+/* SELECCIÓN DE TEXTO */
+::selection {
+    color: #ffffff;
+    background: #8d3f9f;
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes kuromiTitulo {
+    from {
+        text-shadow: 0 0 8px #ff4fa3, 2px 2px 0 #5a267e;
+    }
+    to {
+        text-shadow:
+            0 0 15px #ff4fa3,
+            0 0 28px #8d5bce,
+            2px 2px 0 #5a267e;
+    }
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 600px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    header,
+    section,
+    footer {
+        padding: 22px 15px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        padding: 10px 14px;
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    img {
+        border-radius: 16px;
+    }
+
+    video {
+        border-radius: 18px;
+    }
+}
+
+/* RESPETAR LA PREFERENCIA DE MENOS ANIMACIÓN */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =====================================
+   🖤 EFECTOS ANIMADOS ESTILO KUROMI
+   ===================================== */
+
+/* 1. Las tarjetas flotan suavemente */
+header,
+section,
+footer {
+    animation: flotar 4s ease-in-out infinite;
+    transition:
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+
+/* Retrasos para que no se muevan todas juntas */
+section:nth-of-type(2) {
+    animation-delay: 0.4s;
+}
+
+section:nth-of-type(3) {
+    animation-delay: 0.8s;
+}
+
+section:nth-of-type(4) {
+    animation-delay: 1.2s;
+}
+
+/* Movimiento suave de arriba hacia abajo */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 2. Los títulos tienen un brillo mágico */
+h1 {
+    animation: brilloKuromi 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes brilloKuromi {
+    from {
+        text-shadow:
+            0 0 5px #ff4fa3,
+            0 0 12px #8d5bce;
+    }
+
+    to {
+        text-shadow:
+            0 0 12px #ff4fa3,
+            0 0 25px #ff4fa3,
+            0 0 38px #8d5bce;
+    }
+}
+
+/* 3. Los subtítulos resaltan al pasar el cursor */
+h2 {
+    transition: all 0.35s ease;
+}
+
+h2:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow:
+        0 0 12px #ff4fa3,
+        0 0 25px #8d5bce;
+    transform: scale(1.03);
+}
+
+/* 4. Las imágenes tienen un brillo encantado */
+img {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        filter 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.04) rotate(-1deg);
+    filter: brightness(1.08);
+    box-shadow:
+        0 0 15px #ff4fa3,
+        0 0 30px #8d5bce,
+        0 0 45px #8d5bce55;
+}
+
+/* 5. Los audios brillan al pasar el cursor */
+audio {
+    transition: box-shadow 0.35s ease;
+}
+
+audio:hover {
+    box-shadow:
+        0 0 15px #ff4fa3,
+        0 0 30px #8d5bce;
+}
+
+/* 6. Los videos resaltan con luz morada */
+video {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+video:hover {
+    transform: scale(1.015);
+    box-shadow:
+        0 0 18px #c9a3ff,
+        0 0 35px #ff4fa3;
+}
+
+/* 7. Los bordes de las tarjetas brillan */
+section:hover,
+header:hover,
+footer:hover {
+    border-color: #ff4fa3;
+    box-shadow:
+        0 0 15px #ff4fa355,
+        0 0 30px #8d5bce44;
+}
+
+/* 8. Los textos importantes resaltan */
+strong {
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+strong:hover {
+    color: #ffffff;
+    text-shadow:
+        0 0 8px #ff4fa3,
+        0 0 18px #8d5bce;
+}
+
+/* 9. Los separadores tienen un toque decorativo */
+hr {
+    width: 70%;
+    border: none;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #8d5bce,
+        #ff4fa3,
+        #8d5bce,
+        transparent
+    );
+    box-shadow: 0 0 10px #ff4fa355;
+    margin: 38px auto;
+}
+
+/* 10. Evitar movimientos excesivos si se
+   prefiere una experiencia más tranquila */
+@media (prefers-reduced-motion: reduce) {
+    header,
+    section,
+    footer,
+    h1 {
+        animation: none !important;
+    }
+
+    img,
+    video,
+    h2,
+    strong {
+        transition: none !important;
+    }
+}
+
+/* BOTÓN INICIAL ESTILO KUROMI */
+.kuromi-inicio {
+    text-align: center;
+    margin: 25px auto 40px;
+    padding: 20px;
+}
+
+#iniciarAudios {
+    padding: 16px 30px;
+    color: #fff2fb;
+    background: linear-gradient(135deg, #8d5bce, #ff4fa3);
+    border: 2px solid #ffb3d9;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff4fa366;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#iniciarAudios:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px #ff4fa3, 0 0 35px #8d5bce;
+}
+
+#mensajeAudios {
+    color: #c9a3ff;
+    font-size: 14px;
+}
+.video-container {
+  width: 100%;
+  max-width: 850px;
+  aspect-ratio: 16 / 9;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
