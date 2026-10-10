@@ -264,7 +264,7 @@
 
         <video controls preload="metadata" width="500">
             <source
-                src="WhatsApp Video 2026-10-09 at 11.13.26 PM (3).mp4"
+                src="e0607cfff8610f0aee0ae580.mp4"
                 type="video/mp4">
 
             Tu navegador no puede reproducir este video.
@@ -355,85 +355,3 @@
 
 </body>
 </html>
-<!-- CONTROL DE REPRODUCCIÓN SECUENCIAL POR DESPLAZAMIENTO -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const boton = document.getElementById("iniciarAudios");
-            const mensaje = document.getElementById("mensajeAudios");
-            const audios = Array.from(document.querySelectorAll("audio"));
-
-            let experienciaIniciada = false;
-
-            if (!boton || audios.length === 0) {
-                if (mensaje) mensaje.textContent = "No se encontraron audios.";
-                return;
-            }
-
-            // 1. EL BOTÓN DESBLOQUEA Y ACTIVA EL MOTOR DE AUDIO
-            boton.addEventListener("click", function () {
-                experienciaIniciada = true;
-                boton.textContent = "💜 Experiencia activada";
-                mensaje.textContent = "¡Listo! Baja por la página para escuchar los audios en orden.";
-
-                // Truco clave para móviles y PC: precargar y "tocar" brevemente los audios 
-                // dentro del evento del botón para que el navegador los autorice.
-                audios.forEach((audio) => {
-                    audio.load();
-                });
-
-                // Intentar reproducir el primer audio de inmediato si ya está visible
-                verificarYReproducir();
-            });
-
-            // 2. FUNCIÓN DE REPRODUCCIÓN SECUENCIAL ESTRICTA
-            function verificarYReproducir() {
-                if (!experienciaIniciada) return;
-
-                // Buscar el primer audio que aún no haya terminado y esté visible en pantalla
-                for (let i = 0; i < audios.length; i++) {
-                    const audio = audios[i];
-                    const rect = audio.getBoundingClientRect();
-                    
-                    // Verificamos si el reproductor está a la vista del usuario
-                    const estaVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
-                    
-                    // Condición de orden: 
-                    // - Es el primer audio (i === 0) O el audio anterior (i - 1) ya terminó.
-                    const anteriorTerminado = i === 0 || audios[i - 1].ended;
-
-                    if (estaVisible && anteriorTerminado && audio.paused && !audio.dataset.reproduciendo) {
-                        
-                        // Pausar cualquier otro por seguridad
-                        audios.forEach(a => {
-                            if (a !== audio) {
-                                a.pause();
-                            }
-                        });
-
-                        audio.dataset.reproduciendo = "true";
-                        
-                        audio.play().then(() => {
-                            mensaje.textContent = `🎧 Reproduciendo audio ${i + 1} de ${audios.length}`;
-                        }).catch(error => {
-                            console.log("Bloqueo de autoplay evitado o pausado:", error);
-                            mensaje.textContent = `Presiona ▶ en el reproductor del Audio ${i + 1}.`;
-                        });
-                        
-                        break; // Salir del ciclo para asegurar que solo se intente uno a la vez
-                    }
-                }
-            }
-
-            // Escuchar el movimiento de la página (scroll)
-            window.addEventListener("scroll", verificarYReproducir);
-            window.addEventListener("resize", verificarYReproducir);
-
-            // Cuando un audio termine, actualizar mensaje y forzar revisión para el siguiente
-            audios.forEach((audio, indice) => {
-                audio.addEventListener("ended", function () {
-                    mensaje.textContent = `Audio ${indice + 1} terminado. Sigue bajando para el siguiente.`;
-                    verificarYReproducir();
-                });
-            });
-        });
-    </script>
